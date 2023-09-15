@@ -3,7 +3,7 @@ class ClienteEspecial extends Cliente {
     private dependentes: Array<Cliente>;
 
     constructor(nome: string, cpf: string, conta: Conta = undefined) {
-        super(nome, cpf, conta) ;
+        super(nome, cpf, conta);
         this.dependentes = [];
     }
 
@@ -11,9 +11,9 @@ class ClienteEspecial extends Cliente {
         this.dependentes.push(cliente);
     }
 
-pesquisar(cpf: string): Cliente {
-    return this.dependentes.find(cliente => cliente.cpf === cpf);
-}
+    pesquisar(cpf: string): Cliente {
+        return this.dependentes.find(cliente => cliente.cpf === cpf);
+    }
 
     remover(cpf: string): void {
         const clienteARemover: Cliente = this.pesquisar(cpf);

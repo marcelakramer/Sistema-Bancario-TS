@@ -6,7 +6,7 @@ class Clientes {
         this.clientes.push(cliente);
     }
     pesquisar(cpf) {
-        return this.clientes.find(conta => cpf === cpf);
+        return this.clientes.find(cliente => cpf === cpf);
     }
     remover(cpf) {
         const clienteARemover = this.pesquisar(cpf);

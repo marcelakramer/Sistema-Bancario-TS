@@ -6,13 +6,13 @@ class Clientes {
         this.clientes = [];
     }
 
-    inserir(cliente: Cliente) {
+    inserir(cliente: Cliente): void {
         this.clientes.push(cliente);
     }
 
     pesquisar(cpf: string): Cliente {
         return this.clientes.find(
-            conta => cpf === cpf
+            cliente => cpf === cpf
         );
     }
 

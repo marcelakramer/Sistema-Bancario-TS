@@ -2,7 +2,6 @@ class ClienteController {
 
     private inputNome: HTMLInputElement;
     private inputCpf: HTMLInputElement;
-
     private clientes: Clientes;
 
     constructor() {
@@ -10,10 +9,10 @@ class ClienteController {
             <HTMLInputElement>document.querySelector("#nome")
         this.inputCpf =
             <HTMLInputElement>document.querySelector("#cpf");
-        this.clientes= new Clientes();
+        this.clientes = new Clientes();
     }
 
-    inserir(evento: Event) {
+    inserir(evento: Event): void {
         evento.preventDefault();
         let novoCliente = new Cliente(this.inputNome.value, this.inputCpf.value);
 
@@ -21,7 +20,7 @@ class ClienteController {
         this.inserirClienteNoHTML(novoCliente);
     }
 
-    listar() {
+    listar(): void {
         this.clientes.listar().forEach(
             cliente => {
                 this.inserirClienteNoHTML(cliente);
@@ -29,7 +28,7 @@ class ClienteController {
         );
     }
 
-    inserirClienteNoHTML(cliente: Cliente) {
+    inserirClienteNoHTML(cliente: Cliente): void {
         const elementoP = document.createElement('p');
         elementoP.textContent = cliente.toString();
         const botaoApagar = document.createElement('button');
@@ -44,6 +43,5 @@ class ClienteController {
         elementoP.appendChild(botaoApagar);
         document.body.appendChild(elementoP);
     }
-
 
 }
